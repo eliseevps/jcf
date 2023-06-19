@@ -1,5 +1,10 @@
+//Complete
+
 package task0801;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,8 +34,20 @@ Requirements:
 */
 
 public class Solution {
-    public static void main(String[] args) {
-        //напишите тут ваш код
+    public static void main(String[] args) throws IOException {
+        Set<String> list = new HashSet<>();
 
+        initializeArray(list);
+
+        for (String str : list) {
+            System.out.println(str);
+        }
+    }
+
+    public static void initializeArray(Set<String> list) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 10; i++) {
+            list.add(reader.readLine());
+        }
     }
 }

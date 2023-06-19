@@ -26,14 +26,16 @@ Requirements:
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int n;
-        int m;
-        n = Integer.parseInt(reader.readLine());
-        m = Integer.parseInt(reader.readLine());
+        int n = Integer.parseInt(reader.readLine());
+        int m = Integer.parseInt(reader.readLine());
         ArrayList<String> strings = new ArrayList<>();
 
         initializeArrayN(strings, n);
         swapArrayM(strings, m);
+
+        for (String str : strings) {
+            System.out.println(str);
+        }
     }
 
     public static void initializeArrayN(ArrayList<String> arrayList, int length) throws IOException {
@@ -45,12 +47,8 @@ public class Solution {
 
     public static void swapArrayM(ArrayList<String> arrayList, int length) {
         for (int i = 0; i < length; i++) {
-            arrayList.add(arrayList.get(i));
-            arrayList.remove(i--);
-            length--;
-        }
-        for (String str : arrayList) {
-            System.out.println(str);
+            arrayList.add(arrayList.get(0));
+            arrayList.remove(0);
         }
     }
 }

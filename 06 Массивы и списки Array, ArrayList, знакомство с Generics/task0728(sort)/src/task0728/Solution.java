@@ -1,7 +1,11 @@
+//Complete
+
 package task0728;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Comparator;
 
 /* 
 В убывающем порядке
@@ -19,7 +23,7 @@ Requirements:
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int[] array = new int[20];
+        Integer[] array = new Integer[20];
         for (int i = 0; i < 20; i++) {
             array[i] = Integer.parseInt(reader.readLine());
         }
@@ -31,7 +35,7 @@ public class Solution {
         }
     }
 
-    public static void sort(int[] array) {
-        //напишите тут ваш код
+    public static void sort(Integer[] array) {
+        Arrays.sort(array, Comparator.reverseOrder());
     }
 }
