@@ -1,3 +1,5 @@
+//Complete
+
 package task0718;
 
 import java.io.BufferedReader;
@@ -20,7 +22,32 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        ArrayList<String> strings = new ArrayList<>();
+        initializeArray(strings);
+        checkLength(strings);
+    }
+
+    public static void initializeArray(ArrayList<String> arrayList) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 10; i++) {
+            arrayList.add(reader.readLine());
+        }
+    }
+
+    public static void checkLength(ArrayList<String> arrayList) {
+        int index = -1;
+        for (int i = 1; i < arrayList.size(); i++) {
+            if (arrayList.get(i - 1).length() > arrayList.get(i).length()) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index == -1) {
+            System.out.println("Список упорядочен по возрастанию длины элементов.");
+        } else {
+            System.out.println("Список не упорядочен. Нарушает порядок элемент с индексом - " + index);
+        }
     }
 }
 

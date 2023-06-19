@@ -1,3 +1,5 @@
+//Complete
+
 package task0720;
 
 import java.io.BufferedReader;
@@ -24,7 +26,31 @@ Requirements:
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int n;
+        int m;
+        n = Integer.parseInt(reader.readLine());
+        m = Integer.parseInt(reader.readLine());
+        ArrayList<String> strings = new ArrayList<>();
 
-        //напишите тут ваш код
+        initializeArrayN(strings, n);
+        swapArrayM(strings, m);
+    }
+
+    public static void initializeArrayN(ArrayList<String> arrayList, int length) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < length; i++) {
+            arrayList.add(reader.readLine());
+        }
+    }
+
+    public static void swapArrayM(ArrayList<String> arrayList, int length) {
+        for (int i = 0; i < length; i++) {
+            arrayList.add(arrayList.get(i));
+            arrayList.remove(i--);
+            length--;
+        }
+        for (String str : arrayList) {
+            System.out.println(str);
+        }
     }
 }

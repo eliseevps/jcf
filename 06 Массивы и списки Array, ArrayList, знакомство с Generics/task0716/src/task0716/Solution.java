@@ -1,3 +1,5 @@
+//Complete
+
 package task0716;
 
 import java.util.ArrayList;
@@ -44,7 +46,16 @@ public class Solution {
     }
 
     public static ArrayList<String> fix(ArrayList<String> strings) {
-        //напишите тут ваш код
-        return null;
+        for (int i = 0; i < strings.size(); i++) {
+            if (strings.get(i).contains("р") && strings.get(i).contains("л")) {
+            } else if (strings.get(i).contains("р")) {
+                strings.remove(i);
+                i--;
+            } else if (strings.get(i).contains("л")) {
+                strings.add(i + 1, strings.get(i));
+                i++;
+            }
+        }
+        return strings;
     }
 }
