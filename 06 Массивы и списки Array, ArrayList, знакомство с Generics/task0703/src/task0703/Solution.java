@@ -1,6 +1,9 @@
+//Complete
+
 package task0703;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /* 
@@ -20,6 +23,27 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        for (int i : fillIntArray(initializeStringArray())) {
+            System.out.println(i);
+        }
+    }
+
+    public static String[] initializeStringArray() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String[] array = new String[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = reader.readLine();
+        }
+        return array;
+    }
+
+    public static int[] fillIntArray(String[] arrayStr) {
+        int[] arrayInt = new int[10];
+        if (arrayInt.length == arrayStr.length) {
+            for (int i = 0; i < arrayInt.length; i++) {
+                arrayInt[i] = arrayStr[i].length();
+            }
+        }
+        return arrayInt;
     }
 }

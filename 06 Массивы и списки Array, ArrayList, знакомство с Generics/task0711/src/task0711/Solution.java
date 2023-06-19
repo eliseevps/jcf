@@ -1,6 +1,9 @@
+//Complete
+
 package task0711;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -19,6 +22,26 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        initializeArray(arrayList);
+        deleteAndAddStrings(arrayList);
+        for (String str : arrayList) {
+            System.out.println(str);
+        }
+    }
+
+    public static void initializeArray(ArrayList<String> arrayList) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 5; i++) {
+            arrayList.add(reader.readLine());
+        }
+    }
+
+    public static void deleteAndAddStrings(ArrayList<String> arrayList) {
+        for (int i = 0; i < 13; i++) {
+            arrayList.add(0, arrayList.get(arrayList.size() - 1));
+            arrayList.remove(arrayList.size() - 1);
+        }
     }
 }

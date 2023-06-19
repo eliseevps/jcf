@@ -1,6 +1,9 @@
+//Complete
+
 package task0713;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -25,10 +28,42 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        ArrayList<Integer> arrayListDivThree = new ArrayList<>();
+        ArrayList<Integer> arrayListDivTwo = new ArrayList<>();
+        ArrayList<Integer> arrayListOther = new ArrayList<>();
+        initializeArray(arrayList);
+
+        for (Integer i : arrayList) {
+            if (i % 3 == 0 && i % 2 == 0) {
+                arrayListDivThree.add(i);
+                arrayListDivTwo.add(i);
+            } else if (i % 3 == 0) {
+                arrayListDivThree.add(i);
+            } else if (i % 2 == 0) {
+                arrayListDivTwo.add(i);
+            } else {
+                arrayListOther.add(i);
+            }
+        }
+
+        printList(arrayListDivThree);
+        printList(arrayListDivTwo);
+        printList(arrayListOther);
     }
 
+    public static void initializeArray(ArrayList<Integer> arrayList) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 20; i++) {
+            arrayList.add(Integer.parseInt(reader.readLine()));
+        }
+    }
+
+
     public static void printList(ArrayList<Integer> list) {
-        //напишите тут ваш код
+        for (Integer i : list) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
     }
 }

@@ -21,6 +21,24 @@ public class Solution {
     private static ArrayList<String> strings;
 
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        strings = new ArrayList<>();
+        int maxLength = Integer.MIN_VALUE;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        for (int i = 0; i < 5; i++) {
+            strings.add(reader.readLine());
+        }
+
+        for (String str : strings) {
+            if (maxLength < str.length()) {
+                maxLength = str.length();
+            }
+        }
+
+        for (String str : strings) {
+            if (maxLength == str.length()) {
+                System.out.println(str);
+            }
+        }
     }
 }

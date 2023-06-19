@@ -1,3 +1,5 @@
+//Complete
+
 package task0706;
 
 import java.io.BufferedReader;
@@ -24,6 +26,35 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        System.out.println(numberOfResidents(initializeArray()));
+    }
+
+    public static int[] initializeArray() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] array = new int[15];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Integer.parseInt(reader.readLine());
+        }
+        return array;
+    }
+
+    public static String numberOfResidents(int[] array) {
+        int left = 0;
+        int right = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+                if (i % 2 == 0) {
+                    right += array[i];
+                } else {
+                    left += array[i];
+                }
+            }
+        }
+        if (right > left) {
+            return "В домах с четными номерами проживает больше жителей. (" + right + " > " + left + ")";
+        } else if (left > right) {
+            return "В домах с нечетными номерами проживает больше жителей. (" + right + " < " + left + ")";
+        }
+        return "";
     }
 }

@@ -1,3 +1,5 @@
+//Complete
+
 package task0701;
 
 import java.io.BufferedReader;
@@ -26,12 +28,21 @@ public class Solution {
     }
 
     public static int[] initializeArray() throws IOException {
-        // создай и заполни массив
-        return null;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] array = new int[20];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Integer.parseInt(reader.readLine());
+        }
+        return array;
     }
 
     public static int max(int[] array) {
-        // найди максимальное значение
-        return 0;
+        int max = Integer.MIN_VALUE;
+        for (int i : array) {
+            if (i > max) {
+                max = i;
+            }
+        }
+        return max;
     }
 }

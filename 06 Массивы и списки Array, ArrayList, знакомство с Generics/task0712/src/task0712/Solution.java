@@ -1,9 +1,12 @@
+//Complete
+
 package task0712;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
 
 /* 
 Самые-самые
@@ -23,6 +26,35 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        ArrayList<String> arrayList = new ArrayList<>();
+        initializeArray(arrayList);
+        printString(arrayList);
+    }
+
+    public static void initializeArray(ArrayList<String> arrayList) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 10; i++) {
+            arrayList.add(reader.readLine());
+        }
+    }
+
+    public static void printString(ArrayList<String> arrayList) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (String str : arrayList) {
+            if (str.length() < min) {
+                min = str.length();
+            } else if (str.length() > max) {
+                max = str.length();
+            }
+        }
+
+        for (String str : arrayList) {
+            if (str.length() == min || str.length() == max) {
+                System.out.println(str);
+                break;
+            }
+        }
     }
 }

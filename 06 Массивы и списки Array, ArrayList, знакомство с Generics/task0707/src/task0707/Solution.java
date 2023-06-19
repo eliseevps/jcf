@@ -1,3 +1,5 @@
+//Complete
+
 package task0707;
 
 import java.util.ArrayList;
@@ -19,6 +21,16 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("One");
+        arrayList.add("Two");
+        arrayList.add("Three");
+        arrayList.add("Four");
+        arrayList.add("Five");
+
+        System.out.println("Размер массива: " + arrayList.size());
+        for (String str : arrayList) {
+            System.out.println(str);
+        }
     }
 }
