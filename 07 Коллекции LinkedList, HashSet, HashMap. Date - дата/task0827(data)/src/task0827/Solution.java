@@ -1,6 +1,12 @@
+//Complete
+
 package task0827;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /* 
 Работа с датой
@@ -20,11 +26,17 @@ Requirements:
 4. Метод main() должен вызывать метод isDateOdd().*/
 
 public class Solution {
-    public static void main(String[] args) {
-        System.out.println(isDateOdd("MAY 1 2013"));
+    public static void main(String[] args) throws ParseException {
+        System.out.println(isDateOdd("JANUARY 1 2000"));
     }
 
-    public static boolean isDateOdd(String date) {
-        return true;
+    public static boolean isDateOdd(String date) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("MMMM d yyyy", Locale.ENGLISH);
+        Date parsedDate =  dateFormat.parse(date);
+        Date yearStart = new Date(parsedDate.getYear(), 0, 1);
+
+        long divDays = parsedDate.getTime() - yearStart.getTime();
+        long days = divDays / (1000 * 60 * 60 * 24) + 1;
+        return days % 2 != 0;
     }
 }

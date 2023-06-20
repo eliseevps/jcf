@@ -1,7 +1,11 @@
+//Complete
+
 package task0817;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /* 
 Нам повторы не нужны
@@ -18,13 +22,32 @@ Requirements:
 
 public class Solution {
     public static Map<String, String> createMap() {
-        //напишите тут ваш код
+        Map<String, String> mapDictionary = new HashMap<>();
+        mapDictionary.put("Петров", "Андрей");
+        mapDictionary.put("Сидоров", "Илья");
+        mapDictionary.put("Колобков", "Андрей");
+        mapDictionary.put("Рожков", "Дмитрий");
+        mapDictionary.put("Молчанов", "Павел");
+        mapDictionary.put("Ляпустин", "Илья");
+        mapDictionary.put("Гончаров", "Андрей");
+        mapDictionary.put("Гаврилов", "Марат");
+        mapDictionary.put("Емельянов", "Андрей");
+        mapDictionary.put("Ромашкин", "Глеб");
 
+        return mapDictionary;
     }
 
     public static void removeTheFirstNameDuplicates(Map<String, String> map) {
-        //напишите тут ваш код
+        Map<String, String> copy = new HashMap<>(map);
+        Set<String> set = new HashSet<>();
 
+        for (String value : copy.values()) {
+            if (set.contains(value)) {
+                removeItemFromMapByValue(map, value);
+            } else {
+                set.add(value);
+            }
+        }
     }
 
     public static void removeItemFromMapByValue(Map<String, String> map, String value) {
@@ -37,6 +60,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Map<String, String> map = createMap();
 
+        removeTheFirstNameDuplicates(map);
+        for (Map.Entry<String, String> pair : map.entrySet()) {
+            System.out.println(pair);
+        }
     }
 }
