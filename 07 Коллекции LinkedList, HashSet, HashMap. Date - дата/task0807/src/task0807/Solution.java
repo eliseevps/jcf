@@ -1,7 +1,10 @@
+//Complete
+
 package task0807;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /* 
 Нужно создать два списка - LinkedList и ArrayList.
@@ -16,16 +19,15 @@ Requirements:
 
 public class Solution {
     public static Object createArrayList() {
-        //напишите тут ваш код
-
+        return new ArrayList<>();
     }
 
     public static Object createLinkedList() {
-        //напишите тут ваш код
-
+        return new LinkedList<>();
     }
 
     public static void main(String[] args) {
-
+        Object arrayList = createArrayList();
+        Object linkedList = createLinkedList();
     }
 }

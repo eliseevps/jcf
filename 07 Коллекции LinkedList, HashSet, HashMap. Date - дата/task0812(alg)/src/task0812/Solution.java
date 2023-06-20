@@ -1,3 +1,5 @@
+//Complete
+
 package task0812;
 
 import java.io.BufferedReader;
@@ -5,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /* 
 Cамая длинная последовательность
@@ -27,7 +30,27 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        List<Integer> list = new ArrayList<>();
+        int count = 1;
+        int maxCount = 0;
 
+        initializeArray(list);
+
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i - 1).equals(list.get(i))) {
+                count++;
+            } else {
+                maxCount = Math.max(maxCount, count);
+                count = 1;
+            }
+        }
+        System.out.println("Длина самой длинной последовательности чисел: " + maxCount);
+    }
+
+    public static void initializeArray(List<Integer> list) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 10; i++) {
+            list.add(Integer.parseInt(reader.readLine()));
+        }
     }
 }

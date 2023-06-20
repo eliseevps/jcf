@@ -1,3 +1,5 @@
+//Complete
+
 package task0815;
 
 import java.util.HashMap;
@@ -18,21 +20,45 @@ Requirements:
 
 public class Solution {
     public static Map<String, String> createMap() {
-        //напишите тут ваш код
+        Map<String, String> mapDictionary = new HashMap<>();
+        mapDictionary.put("Петров", "Андрей");
+        mapDictionary.put("Сидоров", "Илья");
+        mapDictionary.put("Колобков", "Андрей");
+        mapDictionary.put("Петров", "Дмитрий");
+        mapDictionary.put("Молчанов", "Павел");
+        mapDictionary.put("Ляпустин", "Илья");
+        mapDictionary.put("Гончаров", "Андрей");
+        mapDictionary.put("Колобков", "Марат");
+        mapDictionary.put("Колобков", "Андрей");
+        mapDictionary.put("Ромашкин", "Андрей");
 
+        return mapDictionary;
     }
 
     public static int getCountTheSameFirstName(Map<String, String> map, String name) {
-        //напишите тут ваш код
-
+        int count = 0;
+        for (String nameInMap : map.values()) {
+            if (nameInMap.equals(name)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static int getCountTheSameLastName(Map<String, String> map, String lastName) {
-        //напишите тут ваш код
-
+        int count = 0;
+        for (String lastNameInMap : map.keySet()) {
+            if (lastNameInMap.equals(lastName)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static void main(String[] args) {
+        Map<String, String> map = createMap();
 
+        System.out.println(getCountTheSameFirstName(map, "Андрей"));
+        System.out.println(getCountTheSameLastName(map, "Колобков"));
     }
 }

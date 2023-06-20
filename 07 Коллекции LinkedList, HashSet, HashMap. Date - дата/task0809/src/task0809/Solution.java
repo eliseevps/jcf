@@ -1,3 +1,5 @@
+//Complete
+
 package task0809;
 
 import java.util.ArrayList;
@@ -24,12 +26,10 @@ public class Solution {
     }
 
     public static long getInsertTimeInMs(List list) {
-        // напишите тут ваш код
+        long time = System.currentTimeMillis();
 
         insert10000(list);
-
-        // напишите тут ваш код
-
+        return System.currentTimeMillis() - time;
     }
 
     public static void insert10000(List list) {
